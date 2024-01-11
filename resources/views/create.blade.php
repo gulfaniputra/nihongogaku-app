@@ -1,3 +1,6 @@
+@extends('layout.template')
+
+@section('content')
 {{-- Start Form --}}
 <form action="" method="post">
     <div class="my-3 p-3 bg-body rounded shadow-sm">
@@ -30,3 +33,4 @@
     </div>
 </form>
 {{-- End Form --}}
+@endsection
