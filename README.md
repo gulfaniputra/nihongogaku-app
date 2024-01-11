@@ -2,7 +2,7 @@
 
 _**Note:** this project is a work in progress_
 
-Nihongogaku app is a spartan Laravel CRUD web application for collecting user's favorites Japanese Linguistic concepts.
+Nihongogaku app is a spartan Laravel CRUD web application for collecting student's favorites Japanese Linguistic concepts.
 
 ## Table Of Contents
 
