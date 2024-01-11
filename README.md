@@ -17,4 +17,4 @@ The objective is to learn and apply basic web development concepts such MVC.
 
 ## Stack
 
-Laravel, jQuery, and Bootstrap.
+Laravel and Bootstrap.
