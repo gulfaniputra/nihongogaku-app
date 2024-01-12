@@ -4,6 +4,8 @@ _**Note:** this project is a work in progress_
 
 Nihongogaku app is a Laravel CRUD application for collecting students' favorite Japanese Linguistics concepts.
 
+The name 'Nihongogaku' comes from the Japanese romanization of 日本語学 that means 'Japanese linguistics'.
+
 ## Table Of Contents
 
 -   [Introduction](#introduction)
