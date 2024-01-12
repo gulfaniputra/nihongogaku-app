@@ -8,6 +8,7 @@ Nihongogaku app is a Laravel CRUD application for collecting students' favorite 
 
 -   [Introduction](#introduction)
 -   [ERD](#erd)
+-   [Local Server Installation](#local-server-installation)
 -   [Stack](#stack)
 
 ## Introduction
@@ -20,6 +21,45 @@ The objective is to learn and apply basic web development concepts such MVC.
 
 <img src="public/erd.png" alt="ERD">
 
+## Local Server Installation
+
+-   Clone the repo:
+
+    ```
+    $ git clone https://github.com/gulfaniputra/nihongogaku-app.git
+    ```
+
+-   Move to the `nihongogaku-app` directory on your local machine:
+
+    ```
+    $ cd nihongogaku-app
+    ```
+
+-   Download the app’s dependencies:
+
+    ```
+    $ composer install
+    ```
+
+-   Set up the app key to a random string:
+
+    ```
+    $ php artisan key:generate
+    ```
+
+-   Create the migration repository:
+
+    ```
+    $ php artisan migrate:install
+    ```
+
+-   Seed the database:
+
+    ```
+    $ php artisan db:seed
+    ```
+
 ## Stack
 
-Laravel and Bootstrap.
+-   Laravel 10
+-   Bootstrap 5
