@@ -2,7 +2,8 @@
 
 @section('content')
 {{-- Start Form --}}
-<form action="" method="post">
+<form action="{{ url('/') }}" method="post">
+    @csrf
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <div class="mb-3 row">
             <label for="id" class="col-sm-2 col-form-label">ID</label>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\student;
 use Illuminate\Http\Request;
 
 class studentController extends Controller
@@ -27,7 +28,15 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            'id' => $request->id,
+            'name' => $request->name,
+            'favorite' => $request->favorite,
+        ];
+
+        student::create($data);
+
+        return 'Laravel';
     }
 
     /**
