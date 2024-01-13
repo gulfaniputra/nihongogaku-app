@@ -2,6 +2,18 @@
 
 @section('content')
 
+@if ($errors->any())
+<div class="pt-3">
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $item)
+            <li>{{ $item }}</li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+@endif
+
 {{-- Start Form --}}
 <form action="{{ url('/') }}" method="post">
     @csrf
@@ -9,19 +21,20 @@
         <div class="mb-3 row">
             <label for="id" class="col-sm-2 col-form-label">ID</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" name="id" id="id" />
+                <input type="number" class="form-control" name="id" value="{{ Session::get('id') }}" id="id" />
             </div>
         </div>
         <div class="mb-3 row">
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="name" id="name" />
+                <input type="text" class="form-control" name="name" value="{{ Session::get('name') }}" id="name" />
             </div>
         </div>
         <div class="mb-3 row">
             <label for="favorite" class="col-sm-2 col-form-label">Favorite Concept</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="favorite" id="favorite" />
+                <input type="text" class="form-control" name="favorite" value="{{ Session::get('favorite') }}"
+                    id="favorite" />
             </div>
         </div>
         <div class="mb-3 row">
