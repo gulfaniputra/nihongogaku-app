@@ -1,6 +1,7 @@
 @extends('layout.template')
 
 @section('content')
+
 {{-- Start Data --}}
 <div class="my-3 p-3 bg-body rounded shadow-sm">
 
@@ -43,4 +44,5 @@
     </table>
 </div>
 {{-- End data --}}
+
 @endsection

@@ -2,7 +2,7 @@
 
 _**Note:** this project is a work in progress_
 
-Nihongogaku app is a Laravel CRUD application for collecting students' favorite Japanese Linguistics concepts.
+Nihongogaku app is a Laravel CRUD application for collecting students' favorite Japanese linguistics concepts.
 
 The name 'Nihongogaku' comes from the Japanese romanization of 日本語学 that means 'Japanese linguistics'.
 
@@ -10,6 +10,7 @@ The name 'Nihongogaku' comes from the Japanese romanization of 日本語学 that
 
 -   [Introduction](#introduction)
 -   [ERD](#erd)
+-   [Description](#descriptions)
 -   [Local Server Installation](#local-server-installation)
 -   [Stack](#stack)
 
@@ -21,7 +22,13 @@ The objective is to learn and apply basic web development concepts such MVC.
 
 ## ERD
 
-<img src="public/erd.png" alt="ERD">
+<img alt="ERD" src="public/erd.png" >
+
+## Descriptions
+
+| **Database** | **Details**                                                            |
+| ------------ | ---------------------------------------------------------------------- |
+| `students`   | store students' IDs, names, and favorite Japanese linguistics concepts |
 
 ## Local Server Installation
 

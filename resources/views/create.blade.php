@@ -1,6 +1,7 @@
 @extends('layout.template')
 
 @section('content')
+
 {{-- Start Form --}}
 <form action="{{ url('/') }}" method="post">
     @csrf
@@ -34,4 +35,5 @@
     </div>
 </form>
 {{-- End Form --}}
+
 @endsection
