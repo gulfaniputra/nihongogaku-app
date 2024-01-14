@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{-- Start Data --}}
+{{-- Start data --}}
 <div class="my-3 p-3 bg-body rounded shadow-sm">
 
     {{-- Search form --}}
@@ -16,7 +16,7 @@
 
     {{-- 'Add A Student' button --}}
     <div class="pb-3">
-        <a href="" class="btn btn-primary">Add A Student</a>
+        <a href="{{ url('/create') }}" class="btn btn-primary">Add A Student</a>
     </div>
 
     <table class="table table-striped">

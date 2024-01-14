@@ -2,18 +2,6 @@
 
 @section('content')
 
-@if ($errors->any())
-<div class="pt-3">
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $item)
-            <li>{{ $item }}</li>
-            @endforeach
-        </ul>
-    </div>
-</div>
-@endif
-
 {{-- Start Form --}}
 <form action="{{ url('/') }}" method="post">
     @csrf
