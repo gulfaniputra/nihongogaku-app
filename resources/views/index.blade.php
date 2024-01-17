@@ -32,9 +32,10 @@
 
         <tbody>
 
+            <?php $i = $data->firstItem() ?>
             @foreach ($data as $item)
             <tr>
-                <td>1</td>
+                <td>{{ $i }}</td>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->favorite }}</td>
@@ -43,10 +44,12 @@
                     <a href="" class="btn btn-danger btn-sm">Del</a>
                 </td>
             </tr>
+            <?php $i++ ?>
             @endforeach
 
         </tbody>
     </table>
+    {{ $data->links() }}
 </div>
 {{-- End data --}}
 
