@@ -13,8 +13,8 @@ class studentController extends Controller
      */
     public function index()
     {
-        $data = student::orderBy('id', 'desc')->paginate(2);
-        return view('index')->with('data', $data);
+        $data = student::orderBy('digits', 'desc')->paginate(2);
+        return view('students.index')->with('data', $data);
     }
 
     /**
@@ -22,7 +22,7 @@ class studentController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('students.create');
     }
 
     /**
@@ -30,31 +30,31 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
-        Session::flash('id', $request->id);
+        Session::flash('digits', $request->digits);
         Session::flash('name', $request->name);
         Session::flash('favorite', $request->favorite);
 
         $request->validate([
-            'id' => 'required|numeric|unique:students,id',
+            'digits' => 'required|numeric|unique:students,digits',
             'name' => 'required',
             'favorite' => 'required',
         ], [
-            'id.required' => "The 'ID' field is required",
-            'id.numeric' => "The 'ID' field only accepts numbers",
-            'id.unique' => 'This ID is already taken',
+            'digits.required' => "The 'ID' field is required",
+            'digits.numeric' => "The 'ID' field only accepts numbers",
+            'digits.unique' => 'This ID is already taken',
             'name.required' => "The 'Name' field is required",
             'favorite.required' => "The 'Favorite Concept' field is required",
         ]);
 
         $data = [
-            'id' => $request->id,
+            'digits' => $request->digits,
             'name' => $request->name,
             'favorite' => $request->favorite,
         ];
 
         student::create($data);
 
-        return redirect()->to('/')->with('success', 'The student was successfully added');
+        return redirect()->to('students')->with('success', 'The student was successfully added');
     }
 
     /**
@@ -70,7 +70,8 @@ class studentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = student::where('digits', $id)->first();
+        return view('students.edit')->with('data', $data);
     }
 
     /**
@@ -78,7 +79,22 @@ class studentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'favorite' => 'required',
+        ], [
+            'name.required' => "The 'Name' field is required",
+            'favorite.required' => "The 'Favorite Concept' field is required",
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'favorite' => $request->favorite,
+        ];
+
+        student::where('digits', $id)->update($data);
+
+        return redirect()->to('students')->with('success', 'The update was successfully stored');
     }
 
     /**

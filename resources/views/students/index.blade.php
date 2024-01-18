@@ -16,7 +16,7 @@
 
     {{-- 'Add A Student' button --}}
     <div class="pb-3">
-        <a href="{{ url('/create') }}" class="btn btn-primary">Add A Student</a>
+        <a href="{{ url('students/create') }}" class="btn btn-primary">Add A Student</a>
     </div>
 
     <table class="table table-striped">
@@ -36,12 +36,12 @@
             @foreach ($data as $item)
             <tr>
                 <td>{{ $i }}</td>
-                <td>{{ $item->id }}</td>
+                <td>{{ $item->digits }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->favorite }}</td>
                 <td>
-                    <a href="" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Del</a>
+                    <a href="{{ url('students/'.$item->digits.'/edit') }}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
             <?php $i++ ?>

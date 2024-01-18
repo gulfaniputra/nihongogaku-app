@@ -3,13 +3,15 @@
 @section('content')
 
 {{-- Start Form --}}
-<form action="{{ url('/') }}" method="post">
+<form action="{{ url('students') }}" method="post">
     @csrf
     <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <a href="{{ url('students') }}" class="btn-btn-secondary">Back</a>
         <div class="mb-3 row">
-            <label for="id" class="col-sm-2 col-form-label">ID</label>
+            <label for="digits" class="col-sm-2 col-form-label">ID</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control" name="id" value="{{ Session::get('id') }}" id="id" />
+                <input type="number" class="form-control" name="digits" value="{{ Session::get('digits') }}"
+                    id="digits" />
             </div>
         </div>
         <div class="mb-3 row">

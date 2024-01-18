@@ -9,6 +9,6 @@ class student extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name', 'favorite'];
+    protected $fillable = ['digits', 'name', 'favorite'];
     public $timestamps = false;
 }
