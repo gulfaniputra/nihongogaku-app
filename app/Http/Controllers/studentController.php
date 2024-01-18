@@ -102,6 +102,7 @@ class studentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        student::where('digits', $id)->delete();
+        return redirect()->to('students')->with('success', 'Deletion was successful');
     }
 }

@@ -41,7 +41,12 @@
                 <td>{{ $item->favorite }}</td>
                 <td>
                     <a href="{{ url('students/'.$item->digits.'/edit') }}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                    <form onsubmit="return confirm('Are you sure?')" action="{{ url('students/'.$item->digits) }}"
+                        method="post" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" name="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
                 </td>
             </tr>
             <?php $i++ ?>
