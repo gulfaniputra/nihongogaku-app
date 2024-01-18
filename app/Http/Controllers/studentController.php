@@ -11,9 +11,20 @@ class studentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = student::orderBy('digits', 'desc')->paginate(2);
+        $keywords = $request->keywords;
+        $lineCount = 4;
+
+        if (strlen($keywords)) {
+            $data = student::where('digits', 'like', "%$keywords%")
+                ->orWhere('name', 'like', "%$keywords%")
+                ->orWhere('favorite', 'like', "%$keywords%")
+                ->paginate($lineCount);
+        } else {
+            $data = student::orderBy('digits', 'desc')->paginate($lineCount);
+        }
+
         return view('students.index')->with('data', $data);
     }
 

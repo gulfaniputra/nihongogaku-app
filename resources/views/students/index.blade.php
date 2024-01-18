@@ -7,7 +7,7 @@
 
     {{-- Search form --}}
     <div class="pb-3">
-        <form class="d-flex" action="" method="get">
+        <form class="d-flex" action="{{ url('students') }}" method="get">
             <input class="form-control me-1" type="search" name="keywords" value="{{ Request::get('keywords') }}"
                 placeholder="Enter the keywords" aria-label="Search" />
             <button class="btn btn-secondary" type="submit">Search</button>
@@ -54,7 +54,7 @@
 
         </tbody>
     </table>
-    {{ $data->links() }}
+    {{ $data->withQueryString()->links() }}
 </div>
 {{-- End data --}}
 
