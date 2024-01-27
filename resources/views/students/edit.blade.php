@@ -7,7 +7,7 @@
     @csrf
     @method('PUT')
     <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <a href="{{ url('students') }}" class="btn-btn-secondary">Back</a>
+        <a href="{{ url('students') }}" class="btn btn-secondary">Back</a>
         <div class="mb-3 row">
             <label for="digits" class="col-sm-2 col-form-label">ID</label>
             <div class="col-sm-10">
