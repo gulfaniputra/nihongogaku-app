@@ -43,13 +43,31 @@ The objective is to learn and apply basic web development concepts such MVC.
     $ cd nihongogaku-app
     ```
 
--   Download the app’s dependencies:
+-   Copy `.env.example` and rename it as `.env`.
+
+-   Configure the database section in `.env`:
+
+    ```
+    ...
+
+    DB_CONNECTION=<my_connection>
+    DB_HOST=<my_host>
+    DB_PORT=<my_port>
+    DB_DATABASE=<my_database>
+    DB_USERNAME=<my_username>
+    DB_PASSWORD=<my_password>
+
+    ...
+    ```
+
+-   Install the app’s dependencies:
 
     ```
     $ composer install
+    $ npm install
     ```
 
--   Set up the app key to a random string:
+-   Generate the `APP_KEY` in `.env` to a random string:
 
     ```
     $ php artisan key:generate
@@ -58,13 +76,19 @@ The objective is to learn and apply basic web development concepts such MVC.
 -   Create the migration repository:
 
     ```
-    $ php artisan migrate:install
+    $ php artisan migrate
     ```
 
 -   Seed the database:
 
     ```
     $ php artisan db:seed
+    ```
+
+-   Start Laravel's local development server:
+
+    ```
+    $ php artisan serve
     ```
 
 ## Features
